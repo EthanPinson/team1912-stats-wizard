@@ -1,15 +1,31 @@
-use chrono::DateTime;
-use ftp::types::FileType;
-use ftp::{FtpError, FtpStream};
+//! Utilities for obtaining .wpilog files from a robot
+use ftp::{types::FileType, *};
 
+/// Credentials to locate and connect to a robot
 pub struct Credentials<'a> {
-    pub team_number: u16, // 1912
-    pub user: &'a str, // lvuser
-    pub password: &'a str // none
+    pub team_number: u16,
+    pub port: u8,
+    pub user: &'a str,
+    pub password: &'a str,
+}
+
+impl<'a> Default for Credentials<'a> {
+    fn default() -> Self {
+        Credentials {
+            team_number: 1912,
+            port: 21,
+            user: "lvuser",
+            password: "",
+        }
+    }
 }
 
 pub fn connect_to_robot(creds: Credentials) -> Result<FtpStream, FtpError> {
-    let addr: String = format!("roboRIO-{:?}-frc.local", creds.team_number);
+    let addr: String = format!(
+        "roboRIO-{team}-frc.local:{port}",
+        team = creds.team_number,
+        port = creds.port
+    );
     let mut stream: FtpStream = FtpStream::connect(addr)?;
     stream.login(creds.user, creds.password)?;
     Ok(stream)
