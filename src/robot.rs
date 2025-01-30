@@ -1,5 +1,6 @@
 //! Utilities for obtaining .wpilog files from a robot
 use ftp::{types::FileType, *};
+use std::io::Read;
 
 /// Credentials to locate and connect to a robot
 pub struct Credentials<'a> {
@@ -21,22 +22,24 @@ impl<'a> Default for Credentials<'a> {
 }
 
 pub fn connect_to_robot(creds: Credentials) -> Result<FtpStream, FtpError> {
-    let addr: String = format!(
-        "roboRIO-{team}-frc.local:{port}",
-        team = creds.team_number,
-        port = creds.port
-    );
+    let addr: String = format!("roboRIO-{t}-frc.local:{p}", t = creds.team_number, p = creds.port);
     let mut stream: FtpStream = FtpStream::connect(addr)?;
     stream.login(creds.user, creds.password)?;
     Ok(stream)
 }
 
-pub fn download_logs(mut stream: FtpStream) -> Result<(), FtpError> {
+pub fn get_logs(mut stream: FtpStream) -> Result<Vec<String>, FtpError> {
     stream.transfer_type(FileType::Binary)?;
+    stream.cwd("/home/lvuser/logs")?;
 
-    let mut log_list: Vec<String> = stream.nlst(Some("/home/lvuser/logs"))?;
-    log_list.extend(stream.nlst(Some("/u/logs"))?);
+    Ok(stream.nlst(None)?)
+}
 
-    // todo: download all logs
+pub fn download_logs(mut stream: FtpStream, log_list: Vec<String>, to_dir: &str) -> Result<(), FtpError> {
+    let lmao: Vec<&str> = log_list.iter().map(String::as_str).collect();
+    for file_name in lmao {
+        let mut buf: Vec<u8> = vec![];
+        stream.get(file_name)?.read_to_end(&mut buf).map_err(FtpError::ConnectionError)?;
+    }
     Ok(())
 }
