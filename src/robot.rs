@@ -1,45 +1,41 @@
 //! Utilities for obtaining .wpilog files from a robot
 use ftp::{types::FileType, *};
-use std::io::Read;
+use std::io::{Read, Write};
 
-/// Credentials to locate and connect to a robot
-pub struct Credentials<'a> {
+pub type RobotFtpResult<T> = Result<T, FtpError>;
+
+pub struct RobotFtpConnection<'a> {
     pub team_number: u16,
-    pub port: u8,
+    pub ftp_port: u8,
     pub user: &'a str,
     pub password: &'a str,
+
+    stream: FtpStream,
+    log_list: Vec<String>
 }
 
-impl<'a> Default for Credentials<'a> {
-    fn default() -> Self {
-        Credentials {
-            team_number: 1912,
-            port: 21,
-            user: "lvuser",
-            password: "",
+impl RobotFtpConnection<'_> {
+    pub fn connect(&mut self) -> RobotFtpResult<()> {
+        let addr: String = format!("roboRIO-{t}-frc.local:{p}", t = self.team_number, p = self.ftp_port);
+        self.stream = FtpStream::connect(addr)?;
+        self.stream.login(self.user, self.password)?;
+        self.stream.transfer_type(FileType::Binary)?;
+        Ok(())
+    }
+
+    pub fn get_logs(&mut self) -> RobotFtpResult<()> {
+        self.stream.cwd("/home/lvuser/logs")?;
+        self.log_list = self.stream.nlst(None)?;
+        Ok(())
+    }
+
+    pub fn download_logs(&mut self, to_dir: &str) -> RobotFtpResult<()> {
+        let lmao: Vec<&str> = self.log_list.iter().map(String::as_str).collect();
+        for file_name in lmao {
+            let mut buf: Vec<u8> = vec![];
+            self.stream.get(file_name)?.read_to_end(&mut buf).map_err(FtpError::ConnectionError)?;
         }
+        Ok(())
+        // maybe just return vec of u8 from this function, then download elsewhere?
     }
-}
-
-pub fn connect_to_robot(creds: Credentials) -> Result<FtpStream, FtpError> {
-    let addr: String = format!("roboRIO-{t}-frc.local:{p}", t = creds.team_number, p = creds.port);
-    let mut stream: FtpStream = FtpStream::connect(addr)?;
-    stream.login(creds.user, creds.password)?;
-    Ok(stream)
-}
-
-pub fn get_logs(mut stream: FtpStream) -> Result<Vec<String>, FtpError> {
-    stream.transfer_type(FileType::Binary)?;
-    stream.cwd("/home/lvuser/logs")?;
-
-    Ok(stream.nlst(None)?)
-}
-
-pub fn download_logs(mut stream: FtpStream, log_list: Vec<String>, to_dir: &str) -> Result<(), FtpError> {
-    let lmao: Vec<&str> = log_list.iter().map(String::as_str).collect();
-    for file_name in lmao {
-        let mut buf: Vec<u8> = vec![];
-        stream.get(file_name)?.read_to_end(&mut buf).map_err(FtpError::ConnectionError)?;
-    }
-    Ok(())
 }
