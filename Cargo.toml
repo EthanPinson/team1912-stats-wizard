@@ -12,3 +12,4 @@ ftp = "3.0.1"
 polars = "0.46.0"
 reqwest = { version = "0.12.12", features = ["blocking"] }
 tokio = "1.43.0"
+openapi = { git = "https://github.com/EthanPinson/tba-api-client-rust.git", branch = "read-api" }
