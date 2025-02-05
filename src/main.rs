@@ -1,6 +1,11 @@
 mod cli;
-mod net;
 mod robot;
+mod web;
+mod updater;
+
+use robot::Connection;
+use robot::Credentials;
+use robot::RobotFtpConnection;
 
 fn main() {
 
