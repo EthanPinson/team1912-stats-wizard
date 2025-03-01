@@ -11,19 +11,19 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// MatchScoreBreakdown2016 : See the 2016 FMS API documentation for a description of each value.
+/// MatchScoreBreakdown2025 : See the 2025 FMS API documentation for a description of each value. https://frc-api-docs.firstinspires.org
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
-pub struct MatchScoreBreakdown2016 {
+pub struct MatchScoreBreakdown2025 {
     #[serde(rename = "blue")]
-    pub blue: Box<models::MatchScoreBreakdown2016Alliance>,
+    pub blue: Box<models::MatchScoreBreakdown2025Alliance>,
     #[serde(rename = "red")]
-    pub red: Box<models::MatchScoreBreakdown2016Alliance>,
+    pub red: Box<models::MatchScoreBreakdown2025Alliance>,
 }
 
-impl MatchScoreBreakdown2016 {
-    /// See the 2016 FMS API documentation for a description of each value.
-    pub fn new(blue: models::MatchScoreBreakdown2016Alliance, red: models::MatchScoreBreakdown2016Alliance) -> MatchScoreBreakdown2016 {
-        MatchScoreBreakdown2016 {
+impl MatchScoreBreakdown2025 {
+    /// See the 2025 FMS API documentation for a description of each value. https://frc-api-docs.firstinspires.org
+    pub fn new(blue: models::MatchScoreBreakdown2025Alliance, red: models::MatchScoreBreakdown2025Alliance) -> MatchScoreBreakdown2025 {
+        MatchScoreBreakdown2025 {
             blue: Box::new(blue),
             red: Box::new(red),
         }
