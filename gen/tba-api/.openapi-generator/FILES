@@ -7,6 +7,7 @@ docs/ApiStatusAppVersion.md
 docs/Award.md
 docs/AwardRecipient.md
 docs/DefaultApi.md
+docs/DistrictAdvancement.md
 docs/DistrictApi.md
 docs/DistrictList.md
 docs/DistrictRanking.md
@@ -73,6 +74,10 @@ docs/Media.md
 docs/NotablesInsight.md
 docs/NotablesInsightData.md
 docs/NotablesInsightDataEntriesInner.md
+docs/RegionalAdvancement.md
+docs/RegionalAdvancementApi.md
+docs/RegionalRanking.md
+docs/RegionalRankingEventPointsInner.md
 docs/SearchIndex.md
 docs/SearchIndexEventsInner.md
 docs/SearchIndexTeamsInner.md
@@ -102,6 +107,7 @@ src/apis/insight_api.rs
 src/apis/list_api.rs
 src/apis/match_api.rs
 src/apis/mod.rs
+src/apis/regional_advancement_api.rs
 src/apis/tba_api.rs
 src/apis/team_api.rs
 src/lib.rs
@@ -109,6 +115,7 @@ src/models/api_status.rs
 src/models/api_status_app_version.rs
 src/models/award.rs
 src/models/award_recipient.rs
+src/models/district_advancement.rs
 src/models/district_list.rs
 src/models/district_ranking.rs
 src/models/district_ranking_event_points_inner.rs
@@ -171,6 +178,9 @@ src/models/model_match.rs
 src/models/notables_insight.rs
 src/models/notables_insight_data.rs
 src/models/notables_insight_data_entries_inner.rs
+src/models/regional_advancement.rs
+src/models/regional_ranking.rs
+src/models/regional_ranking_event_points_inner.rs
 src/models/search_index.rs
 src/models/search_index_events_inner.rs
 src/models/search_index_teams_inner.rs

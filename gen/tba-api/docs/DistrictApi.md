@@ -4,6 +4,7 @@ All URIs are relative to *https://www.thebluealliance.com/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**get_district_advancement**](DistrictApi.md#get_district_advancement) | **GET** /district/{district_key}/advancement | 
 [**get_district_awards**](DistrictApi.md#get_district_awards) | **GET** /district/{district_key}/awards | 
 [**get_district_events**](DistrictApi.md#get_district_events) | **GET** /district/{district_key}/events | 
 [**get_district_events_keys**](DistrictApi.md#get_district_events_keys) | **GET** /district/{district_key}/events/keys | 
@@ -17,6 +18,37 @@ Method | HTTP request | Description
 [**get_event_district_points**](DistrictApi.md#get_event_district_points) | **GET** /event/{event_key}/district_points | 
 [**get_team_districts**](DistrictApi.md#get_team_districts) | **GET** /team/{team_key}/districts | 
 
+
+
+## get_district_advancement
+
+> std::collections::HashMap<String, models::DistrictAdvancement> get_district_advancement(district_key, if_none_match)
+
+
+Gets a list of advancement information per team in a district.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**district_key** | **String** | TBA District Key, eg `2016fim` | [required] |
+**if_none_match** | Option<**String**> | Value of the `ETag` header in the most recently cached response by the client. |  |
+
+### Return type
+
+[**std::collections::HashMap<String, models::DistrictAdvancement>**](District_Advancement.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
 ## get_district_awards
@@ -334,7 +366,7 @@ Name | Type | Description  | Required | Notes
 > models::EventDistrictPoints get_event_district_points(event_key, if_none_match)
 
 
-Gets a list of team rankings for the Event.
+Gets a list of district points for the Event. These are always calculated, regardless of event type, and may/may not be actually useful.
 
 ### Parameters
 

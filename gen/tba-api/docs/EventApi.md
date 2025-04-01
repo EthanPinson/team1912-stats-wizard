@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**get_district_events_keys**](EventApi.md#get_district_events_keys) | **GET** /district/{district_key}/events/keys | 
 [**get_district_events_simple**](EventApi.md#get_district_events_simple) | **GET** /district/{district_key}/events/simple | 
 [**get_event**](EventApi.md#get_event) | **GET** /event/{event_key} | 
+[**get_event_advancement_points**](EventApi.md#get_event_advancement_points) | **GET** /event/{event_key}/advancement_points | 
 [**get_event_alliances**](EventApi.md#get_event_alliances) | **GET** /event/{event_key}/alliances | 
 [**get_event_awards**](EventApi.md#get_event_awards) | **GET** /event/{event_key}/awards | 
 [**get_event_coprs**](EventApi.md#get_event_coprs) | **GET** /event/{event_key}/coprs | 
@@ -30,6 +31,7 @@ Method | HTTP request | Description
 [**get_events_by_year**](EventApi.md#get_events_by_year) | **GET** /events/{year} | 
 [**get_events_by_year_keys**](EventApi.md#get_events_by_year_keys) | **GET** /events/{year}/keys | 
 [**get_events_by_year_simple**](EventApi.md#get_events_by_year_simple) | **GET** /events/{year}/simple | 
+[**get_regional_champs_pool_points**](EventApi.md#get_regional_champs_pool_points) | **GET** /event/{event_key}/regional_champs_pool_points | 
 [**get_team_event_awards**](EventApi.md#get_team_event_awards) | **GET** /team/{team_key}/event/{event_key}/awards | 
 [**get_team_event_matches**](EventApi.md#get_team_event_matches) | **GET** /team/{team_key}/event/{event_key}/matches | 
 [**get_team_event_matches_keys**](EventApi.md#get_team_event_matches_keys) | **GET** /team/{team_key}/event/{event_key}/matches/keys | 
@@ -200,6 +202,37 @@ Name | Type | Description  | Required | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
+## get_event_advancement_points
+
+> models::EventDistrictPoints get_event_advancement_points(event_key, if_none_match)
+
+
+Depending on the type of event (district/regional), this will return either district points or regional CMP points
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**event_key** | **String** | TBA Event Key, eg `2016nytr` | [required] |
+**if_none_match** | Option<**String**> | Value of the `ETag` header in the most recently cached response by the client. |  |
+
+### Return type
+
+[**models::EventDistrictPoints**](Event_District_Points.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
 ## get_event_alliances
 
 > Vec<models::EliminationAlliance> get_event_alliances(event_key, if_none_match)
@@ -298,7 +331,7 @@ Name | Type | Description  | Required | Notes
 > models::EventDistrictPoints get_event_district_points(event_key, if_none_match)
 
 
-Gets a list of team rankings for the Event.
+Gets a list of district points for the Event. These are always calculated, regardless of event type, and may/may not be actually useful.
 
 ### Parameters
 
@@ -838,6 +871,37 @@ Name | Type | Description  | Required | Notes
 ### Return type
 
 [**Vec<models::EventSimple>**](Event_Simple.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## get_regional_champs_pool_points
+
+> models::EventDistrictPoints get_regional_champs_pool_points(event_key, if_none_match)
+
+
+For 2025+ Regional events, this will return points towards the Championship qualification pool.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**event_key** | **String** | TBA Event Key, eg `2016nytr` | [required] |
+**if_none_match** | Option<**String**> | Value of the `ETag` header in the most recently cached response by the client. |  |
+
+### Return type
+
+[**models::EventDistrictPoints**](Event_District_Points.md)
 
 ### Authorization
 

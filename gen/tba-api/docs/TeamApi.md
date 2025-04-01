@@ -4,6 +4,7 @@ All URIs are relative to *https://www.thebluealliance.com/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**get_district_advancement**](TeamApi.md#get_district_advancement) | **GET** /district/{district_key}/advancement | 
 [**get_district_rankings**](TeamApi.md#get_district_rankings) | **GET** /district/{district_key}/rankings | 
 [**get_district_teams**](TeamApi.md#get_district_teams) | **GET** /district/{district_key}/teams | 
 [**get_district_teams_keys**](TeamApi.md#get_district_teams_keys) | **GET** /district/{district_key}/teams/keys | 
@@ -46,6 +47,37 @@ Method | HTTP request | Description
 [**get_teams_keys**](TeamApi.md#get_teams_keys) | **GET** /teams/{page_num}/keys | 
 [**get_teams_simple**](TeamApi.md#get_teams_simple) | **GET** /teams/{page_num}/simple | 
 
+
+
+## get_district_advancement
+
+> std::collections::HashMap<String, models::DistrictAdvancement> get_district_advancement(district_key, if_none_match)
+
+
+Gets a list of advancement information per team in a district.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**district_key** | **String** | TBA District Key, eg `2016fim` | [required] |
+**if_none_match** | Option<**String**> | Value of the `ETag` header in the most recently cached response by the client. |  |
+
+### Return type
+
+[**std::collections::HashMap<String, models::DistrictAdvancement>**](District_Advancement.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
 ## get_district_rankings

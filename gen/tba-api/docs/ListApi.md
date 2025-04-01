@@ -4,6 +4,7 @@ All URIs are relative to *https://www.thebluealliance.com/api/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**get_district_advancement**](ListApi.md#get_district_advancement) | **GET** /district/{district_key}/advancement | 
 [**get_district_awards**](ListApi.md#get_district_awards) | **GET** /district/{district_key}/awards | 
 [**get_district_events**](ListApi.md#get_district_events) | **GET** /district/{district_key}/events | 
 [**get_district_events_keys**](ListApi.md#get_district_events_keys) | **GET** /district/{district_key}/events/keys | 
@@ -21,6 +22,8 @@ Method | HTTP request | Description
 [**get_events_by_year_simple**](ListApi.md#get_events_by_year_simple) | **GET** /events/{year}/simple | 
 [**get_insights_leaderboards_year**](ListApi.md#get_insights_leaderboards_year) | **GET** /insights/leaderboards/{year} | 
 [**get_insights_notables_year**](ListApi.md#get_insights_notables_year) | **GET** /insights/notables/{year} | 
+[**get_regional_advancement**](ListApi.md#get_regional_advancement) | **GET** /regional_advancement/{year} | 
+[**get_regional_rankings**](ListApi.md#get_regional_rankings) | **GET** /regional_advancement/{year}/rankings | 
 [**get_team_events_statuses_by_year**](ListApi.md#get_team_events_statuses_by_year) | **GET** /team/{team_key}/events/{year}/statuses | 
 [**get_teams**](ListApi.md#get_teams) | **GET** /teams/{page_num} | 
 [**get_teams_by_year**](ListApi.md#get_teams_by_year) | **GET** /teams/{year}/{page_num} | 
@@ -29,6 +32,37 @@ Method | HTTP request | Description
 [**get_teams_keys**](ListApi.md#get_teams_keys) | **GET** /teams/{page_num}/keys | 
 [**get_teams_simple**](ListApi.md#get_teams_simple) | **GET** /teams/{page_num}/simple | 
 
+
+
+## get_district_advancement
+
+> std::collections::HashMap<String, models::DistrictAdvancement> get_district_advancement(district_key, if_none_match)
+
+
+Gets a list of advancement information per team in a district.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**district_key** | **String** | TBA District Key, eg `2016fim` | [required] |
+**if_none_match** | Option<**String**> | Value of the `ETag` header in the most recently cached response by the client. |  |
+
+### Return type
+
+[**std::collections::HashMap<String, models::DistrictAdvancement>**](District_Advancement.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
 ## get_district_awards
@@ -545,6 +579,68 @@ Name | Type | Description  | Required | Notes
 ### Return type
 
 [**Vec<models::NotablesInsight>**](NotablesInsight.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## get_regional_advancement
+
+> std::collections::HashMap<String, models::RegionalAdvancement> get_regional_advancement(year, if_none_match)
+
+
+Gets information about per-team advancement to the FIRST Championship.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**year** | **i32** | Competition Year (or Season). Must be 4 digits. | [required] |
+**if_none_match** | Option<**String**> | Value of the `ETag` header in the most recently cached response by the client. |  |
+
+### Return type
+
+[**std::collections::HashMap<String, models::RegionalAdvancement>**](Regional_Advancement.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## get_regional_rankings
+
+> Vec<models::RegionalRanking> get_regional_rankings(year, if_none_match)
+
+
+Gets the team rankings in the regional pool for a specific year.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**year** | **i32** | Competition Year (or Season). Must be 4 digits. | [required] |
+**if_none_match** | Option<**String**> | Value of the `ETag` header in the most recently cached response by the client. |  |
+
+### Return type
+
+[**Vec<models::RegionalRanking>**](Regional_Ranking.md)
 
 ### Authorization
 
