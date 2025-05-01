@@ -424,7 +424,7 @@ Name | Type | Description  | Required | Notes
 
 ## get_team_districts
 
-> Vec<models::DistrictList> get_team_districts(team_key, if_none_match)
+> Vec<models::District> get_team_districts(team_key, if_none_match)
 
 
 Gets an array of districts representing each year the team was in a district. Will return an empty array if the team was never in a district.
@@ -439,7 +439,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**Vec<models::DistrictList>**](District_List.md)
+[**Vec<models::District>**](District.md)
 
 ### Authorization
 

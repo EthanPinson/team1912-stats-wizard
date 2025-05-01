@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **name** | **String** | Official name of event on record either provided by FIRST or organizers of offseason event. | 
 **event_code** | **String** | Event short code, as provided by FIRST. | 
 **event_type** | **i32** | Event Type, as defined here: https://github.com/the-blue-alliance/the-blue-alliance/blob/master/consts/event_type.py#L2 | 
-**district** | Option<[**models::DistrictList**](District_List.md)> |  | 
+**district** | Option<[**models::District**](District.md)> |  | 
 **city** | Option<**String**> | City, town, village, etc. the event is located in. | 
 **state_prov** | Option<**String**> | State or Province the event is located in. | 
 **country** | Option<**String**> | Country the event is located in. | 
@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **lat** | Option<**f64**> | Latitude for the event address. | 
 **lng** | Option<**f64**> | Longitude for the event address. | 
 **location_name** | Option<**String**> | Name of the location at the address for the event, eg. Blue Alliance High School. | 
-**timezone** | **String** | Timezone name. | 
+**timezone** | Option<**String**> | Timezone name. | 
 **website** | Option<**String**> | The event's website, if any. | 
 **first_event_id** | Option<**String**> | The FIRST internal Event ID, used to link to the event on the FRC webpage. | 
 **first_event_code** | Option<**String**> | Public facing event code used by FIRST (on frc-events.firstinspires.org, for example) | 

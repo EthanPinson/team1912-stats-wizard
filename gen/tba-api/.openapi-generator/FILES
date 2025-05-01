@@ -7,9 +7,9 @@ docs/ApiStatusAppVersion.md
 docs/Award.md
 docs/AwardRecipient.md
 docs/DefaultApi.md
+docs/District.md
 docs/DistrictAdvancement.md
 docs/DistrictApi.md
-docs/DistrictList.md
 docs/DistrictRanking.md
 docs/DistrictRankingEventPointsInner.md
 docs/EliminationAlliance.md
@@ -115,8 +115,8 @@ src/models/api_status.rs
 src/models/api_status_app_version.rs
 src/models/award.rs
 src/models/award_recipient.rs
+src/models/district.rs
 src/models/district_advancement.rs
-src/models/district_list.rs
 src/models/district_ranking.rs
 src/models/district_ranking_event_points_inner.rs
 src/models/elimination_alliance.rs

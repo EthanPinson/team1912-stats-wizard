@@ -12,22 +12,27 @@ use crate::models;
 use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
-pub struct LeaderboardInsight {
-    #[serde(rename = "data")]
-    pub data: Box<models::LeaderboardInsightData>,
-    /// Name of the insight.
-    #[serde(rename = "name")]
-    pub name: String,
-    /// Year the insight was measured in (year=0 for overall insights).
+pub struct District {
+    /// The short identifier for the district.
+    #[serde(rename = "abbreviation")]
+    pub abbreviation: String,
+    /// The long name for the district.
+    #[serde(rename = "display_name")]
+    pub display_name: String,
+    /// Key for this district, e.g. `2016ne`.
+    #[serde(rename = "key")]
+    pub key: String,
+    /// Year this district participated.
     #[serde(rename = "year")]
     pub year: i32,
 }
 
-impl LeaderboardInsight {
-    pub fn new(data: models::LeaderboardInsightData, name: String, year: i32) -> LeaderboardInsight {
-        LeaderboardInsight {
-            data: Box::new(data),
-            name,
+impl District {
+    pub fn new(abbreviation: String, display_name: String, key: String, year: i32) -> District {
+        District {
+            abbreviation,
+            display_name,
+            key,
             year,
         }
     }

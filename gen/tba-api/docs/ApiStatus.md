@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **down_events** | **Vec<String>** | An array of strings containing event keys of any active events that are no longer updating. | 
 **ios** | [**models::ApiStatusAppVersion**](API_Status_App_Version.md) |  | 
 **android** | [**models::ApiStatusAppVersion**](API_Status_App_Version.md) |  | 
+**max_team_page** | **i32** | Maximum team page number for valid queries. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -177,7 +177,7 @@ Name | Type | Description  | Required | Notes
 
 ## get_district_history
 
-> Vec<models::DistrictList> get_district_history(district_abbreviation, if_none_match)
+> Vec<models::District> get_district_history(district_abbreviation, if_none_match)
 
 
 Gets a list of District objects with the given district abbreviation. This accounts for district abbreviation changes, such as MAR to FMA.
@@ -192,7 +192,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**Vec<models::DistrictList>**](District_List.md)
+[**Vec<models::District>**](District.md)
 
 ### Authorization
 
@@ -332,7 +332,7 @@ Name | Type | Description  | Required | Notes
 
 ## get_districts_by_year
 
-> Vec<models::DistrictList> get_districts_by_year(year, if_none_match)
+> Vec<models::District> get_districts_by_year(year, if_none_match)
 
 
 Gets a list of districts and their corresponding district key, for the given year.
@@ -347,7 +347,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**Vec<models::DistrictList>**](District_List.md)
+[**Vec<models::District>**](District.md)
 
 ### Authorization
 
@@ -394,7 +394,7 @@ Name | Type | Description  | Required | Notes
 
 ## get_team_districts
 
-> Vec<models::DistrictList> get_team_districts(team_key, if_none_match)
+> Vec<models::District> get_team_districts(team_key, if_none_match)
 
 
 Gets an array of districts representing each year the team was in a district. Will return an empty array if the team was never in a district.
@@ -409,7 +409,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**Vec<models::DistrictList>**](District_List.md)
+[**Vec<models::District>**](District.md)
 
 ### Authorization
 
