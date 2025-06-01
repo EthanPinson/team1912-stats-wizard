@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_district_advancement**](DistrictApi.md#get_district_advancement) | **GET** /district/{district_key}/advancement | 
 [**get_district_awards**](DistrictApi.md#get_district_awards) | **GET** /district/{district_key}/awards | 
+[**get_district_dcmp_history**](DistrictApi.md#get_district_dcmp_history) | **GET** /district/{district_abbreviation}/dcmp_history | 
 [**get_district_events**](DistrictApi.md#get_district_events) | **GET** /district/{district_key}/events | 
 [**get_district_events_keys**](DistrictApi.md#get_district_events_keys) | **GET** /district/{district_key}/events/keys | 
 [**get_district_events_simple**](DistrictApi.md#get_district_events_simple) | **GET** /district/{district_key}/events/simple | 
@@ -69,6 +70,37 @@ Name | Type | Description  | Required | Notes
 ### Return type
 
 [**Vec<models::Award>**](Award.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## get_district_dcmp_history
+
+> Vec<models::GetDistrictDcmpHistory200ResponseInner> get_district_dcmp_history(district_abbreviation, if_none_match)
+
+
+Gets a list of DCMP events and awards for the given district abbreviation.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**district_abbreviation** | **String** | District abbreviation, eg `ne` or `fim` | [required] |
+**if_none_match** | Option<**String**> | Value of the `ETag` header in the most recently cached response by the client. |  |
+
+### Return type
+
+[**Vec<models::GetDistrictDcmpHistory200ResponseInner>**](getDistrictDCMPHistory_200_response_inner.md)
 
 ### Authorization
 

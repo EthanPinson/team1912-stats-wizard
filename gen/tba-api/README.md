@@ -35,6 +35,7 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**get_search_index**](docs/DefaultApi.md#get_search_index) | **GET** /search_index | 
 *DistrictApi* | [**get_district_advancement**](docs/DistrictApi.md#get_district_advancement) | **GET** /district/{district_key}/advancement | 
 *DistrictApi* | [**get_district_awards**](docs/DistrictApi.md#get_district_awards) | **GET** /district/{district_key}/awards | 
+*DistrictApi* | [**get_district_dcmp_history**](docs/DistrictApi.md#get_district_dcmp_history) | **GET** /district/{district_abbreviation}/dcmp_history | 
 *DistrictApi* | [**get_district_events**](docs/DistrictApi.md#get_district_events) | **GET** /district/{district_key}/events | 
 *DistrictApi* | [**get_district_events_keys**](docs/DistrictApi.md#get_district_events_keys) | **GET** /district/{district_key}/events/keys | 
 *DistrictApi* | [**get_district_events_simple**](docs/DistrictApi.md#get_district_events_simple) | **GET** /district/{district_key}/events/simple | 
@@ -203,6 +204,7 @@ Class | Method | HTTP request | Description
  - [EventRankingRankingsInner](docs/EventRankingRankingsInner.md)
  - [EventRankingSortOrderInfoInner](docs/EventRankingSortOrderInfoInner.md)
  - [EventSimple](docs/EventSimple.md)
+ - [GetDistrictDcmpHistory200ResponseInner](docs/GetDistrictDcmpHistory200ResponseInner.md)
  - [GetStatus401Response](docs/GetStatus401Response.md)
  - [GetTeamEventsStatusesByYear200ResponseValue](docs/GetTeamEventsStatusesByYear200ResponseValue.md)
  - [History](docs/History.md)

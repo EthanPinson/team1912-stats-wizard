@@ -48,6 +48,8 @@ pub mod event_ranking_sort_order_info_inner;
 pub use self::event_ranking_sort_order_info_inner::EventRankingSortOrderInfoInner;
 pub mod event_simple;
 pub use self::event_simple::EventSimple;
+pub mod get_district_dcmp_history_200_response_inner;
+pub use self::get_district_dcmp_history_200_response_inner::GetDistrictDcmpHistory200ResponseInner;
 pub mod get_status_401_response;
 pub use self::get_status_401_response::GetStatus401Response;
 pub mod get_team_events_statuses_by_year_200_response_value;

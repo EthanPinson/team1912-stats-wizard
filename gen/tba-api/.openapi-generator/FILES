@@ -30,6 +30,7 @@ docs/EventRankingExtraStatsInfoInner.md
 docs/EventRankingRankingsInner.md
 docs/EventRankingSortOrderInfoInner.md
 docs/EventSimple.md
+docs/GetDistrictDcmpHistory200ResponseInner.md
 docs/GetStatus401Response.md
 docs/GetTeamEventsStatusesByYear200ResponseValue.md
 docs/History.md
@@ -136,6 +137,7 @@ src/models/event_ranking_extra_stats_info_inner.rs
 src/models/event_ranking_rankings_inner.rs
 src/models/event_ranking_sort_order_info_inner.rs
 src/models/event_simple.rs
+src/models/get_district_dcmp_history_200_response_inner.rs
 src/models/get_status_401_response.rs
 src/models/get_team_events_statuses_by_year_200_response_value.rs
 src/models/history.rs
