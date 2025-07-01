@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **actual_time** | Option<**i64**> | UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of actual match start time. | 
 **predicted_time** | Option<**i64**> | UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of the TBA predicted match start time. | 
 **post_result_time** | Option<**i64**> | UNIX timestamp (seconds since 1-Jan-1970 00:00:00) when the match result was posted. | 
-**score_breakdown** | Option<[**models::MatchScoreBreakdown**](Match_score_breakdown.md)> |  | 
+**score_breakdown** | [**models::MatchScoreBreakdown**](Match_score_breakdown.md) |  | 
 **videos** | [**Vec<models::MatchVideosInner>**](Match_videos_inner.md) | Array of video objects associated with this match. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -299,7 +299,7 @@ Name | Type | Description  | Required | Notes
 
 ## get_event_teams_statuses
 
-> std::collections::HashMap<String, models::GetTeamEventsStatusesByYear200ResponseValue> get_event_teams_statuses(event_key, if_none_match)
+> std::collections::HashMap<String, models::TeamEventStatus> get_event_teams_statuses(event_key, if_none_match)
 
 
 Gets a key-value list of the event statuses for teams competing at the given event.
@@ -314,7 +314,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**std::collections::HashMap<String, models::GetTeamEventsStatusesByYear200ResponseValue>**](getTeamEventsStatusesByYear_200_response_value.md)
+[**std::collections::HashMap<String, models::TeamEventStatus>**](Team_Event_Status.md)
 
 ### Authorization
 
@@ -804,7 +804,7 @@ Name | Type | Description  | Required | Notes
 
 ## get_team_events_statuses_by_year
 
-> std::collections::HashMap<String, models::GetTeamEventsStatusesByYear200ResponseValue> get_team_events_statuses_by_year(team_key, year, if_none_match)
+> std::collections::HashMap<String, models::TeamEventStatus> get_team_events_statuses_by_year(team_key, year, if_none_match)
 
 
 Gets a key-value list of the event statuses for events this team has competed at in the given year.
@@ -820,7 +820,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**std::collections::HashMap<String, models::GetTeamEventsStatusesByYear200ResponseValue>**](getTeamEventsStatusesByYear_200_response_value.md)
+[**std::collections::HashMap<String, models::TeamEventStatus>**](Team_Event_Status.md)
 
 ### Authorization
 

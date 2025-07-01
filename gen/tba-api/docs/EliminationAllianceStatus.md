@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **playoff_average** | Option<**f64**> |  | [optional]
+**playoff_type** | Option<**f64**> |  | [optional]
 **level** | Option<**String**> |  | [optional]
 **record** | Option<[**models::WltRecord**](WLT_Record.md)> |  | [optional]
 **current_level_record** | Option<[**models::WltRecord**](WLT_Record.md)> |  | [optional]

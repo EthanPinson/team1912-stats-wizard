@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**get_district_events_keys**](DistrictApi.md#get_district_events_keys) | **GET** /district/{district_key}/events/keys | 
 [**get_district_events_simple**](DistrictApi.md#get_district_events_simple) | **GET** /district/{district_key}/events/simple | 
 [**get_district_history**](DistrictApi.md#get_district_history) | **GET** /district/{district_abbreviation}/history | 
+[**get_district_insights**](DistrictApi.md#get_district_insights) | **GET** /district/{district_abbreviation}/insights | 
 [**get_district_rankings**](DistrictApi.md#get_district_rankings) | **GET** /district/{district_key}/rankings | 
 [**get_district_teams**](DistrictApi.md#get_district_teams) | **GET** /district/{district_key}/teams | 
 [**get_district_teams_keys**](DistrictApi.md#get_district_teams_keys) | **GET** /district/{district_key}/teams/keys | 
@@ -225,6 +226,37 @@ Name | Type | Description  | Required | Notes
 ### Return type
 
 [**Vec<models::District>**](District.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## get_district_insights
+
+> models::DistrictInsight get_district_insights(district_abbreviation, if_none_match)
+
+
+Gets insights for a given district.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**district_abbreviation** | **String** | District abbreviation, eg `ne` or `fim` | [required] |
+**if_none_match** | Option<**String**> | Value of the `ETag` header in the most recently cached response by the client. |  |
+
+### Return type
+
+[**models::DistrictInsight**](District_Insight.md)
 
 ### Authorization
 

@@ -10,6 +10,10 @@ docs/DefaultApi.md
 docs/District.md
 docs/DistrictAdvancement.md
 docs/DistrictApi.md
+docs/DistrictInsight.md
+docs/DistrictInsightDistrictData.md
+docs/DistrictInsightRegionData.md
+docs/DistrictInsightTeamDataValue.md
 docs/DistrictRanking.md
 docs/DistrictRankingEventPointsInner.md
 docs/EliminationAlliance.md
@@ -31,9 +35,8 @@ docs/EventRankingRankingsInner.md
 docs/EventRankingSortOrderInfoInner.md
 docs/EventSimple.md
 docs/GetDistrictDcmpHistory200ResponseInner.md
-docs/GetStatus401Response.md
-docs/GetTeamEventsStatusesByYear200ResponseValue.md
 docs/History.md
+docs/InlineObject.md
 docs/InsightApi.md
 docs/LeaderboardInsight.md
 docs/LeaderboardInsightData.md
@@ -72,6 +75,11 @@ docs/MatchSimpleAlliances.md
 docs/MatchTimeseries2018.md
 docs/MatchVideosInner.md
 docs/Media.md
+docs/MediaDetails.md
+docs/MediaDetailsOneOf.md
+docs/MediaDetailsOneOf1.md
+docs/MediaDetailsOneOf2.md
+docs/MediaDetailsOneOf3.md
 docs/NotablesInsight.md
 docs/NotablesInsightData.md
 docs/NotablesInsightDataEntriesInner.md
@@ -87,8 +95,6 @@ docs/Team.md
 docs/TeamApi.md
 docs/TeamEventStatus.md
 docs/TeamEventStatusAlliance.md
-docs/TeamEventStatusAllianceBackup.md
-docs/TeamEventStatusPlayoff.md
 docs/TeamEventStatusRank.md
 docs/TeamEventStatusRankRanking.md
 docs/TeamEventStatusRankSortOrderInfoInner.md
@@ -118,6 +124,10 @@ src/models/award.rs
 src/models/award_recipient.rs
 src/models/district.rs
 src/models/district_advancement.rs
+src/models/district_insight.rs
+src/models/district_insight_district_data.rs
+src/models/district_insight_region_data.rs
+src/models/district_insight_team_data_value.rs
 src/models/district_ranking.rs
 src/models/district_ranking_event_points_inner.rs
 src/models/elimination_alliance.rs
@@ -138,9 +148,8 @@ src/models/event_ranking_rankings_inner.rs
 src/models/event_ranking_sort_order_info_inner.rs
 src/models/event_simple.rs
 src/models/get_district_dcmp_history_200_response_inner.rs
-src/models/get_status_401_response.rs
-src/models/get_team_events_statuses_by_year_200_response_value.rs
 src/models/history.rs
+src/models/inline_object.rs
 src/models/leaderboard_insight.rs
 src/models/leaderboard_insight_data.rs
 src/models/leaderboard_insight_data_rankings_inner.rs
@@ -175,6 +184,11 @@ src/models/match_simple_alliances.rs
 src/models/match_timeseries_2018.rs
 src/models/match_videos_inner.rs
 src/models/media.rs
+src/models/media_details.rs
+src/models/media_details_one_of.rs
+src/models/media_details_one_of_1.rs
+src/models/media_details_one_of_2.rs
+src/models/media_details_one_of_3.rs
 src/models/mod.rs
 src/models/model_match.rs
 src/models/notables_insight.rs
@@ -189,8 +203,6 @@ src/models/search_index_teams_inner.rs
 src/models/team.rs
 src/models/team_event_status.rs
 src/models/team_event_status_alliance.rs
-src/models/team_event_status_alliance_backup.rs
-src/models/team_event_status_playoff.rs
 src/models/team_event_status_rank.rs
 src/models/team_event_status_rank_ranking.rs
 src/models/team_event_status_rank_sort_order_info_inner.rs

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **qual** | Option<[**models::TeamEventStatusRank**](Team_Event_Status_rank.md)> |  | [optional]
 **alliance** | Option<[**models::TeamEventStatusAlliance**](Team_Event_Status_alliance.md)> |  | [optional]
-**playoff** | Option<[**models::TeamEventStatusPlayoff**](Team_Event_Status_playoff.md)> |  | [optional]
+**playoff** | Option<[**models::Null**](null.md)> | Playoff status for this team, may be null if the team did not make playoffs, or playoffs have not begun. | [optional]
 **alliance_status_str** | Option<**String**> | An HTML formatted string suitable for display to the user containing the team's alliance pick status. | [optional]
 **playoff_status_str** | Option<**String**> | An HTML formatter string suitable for display to the user containing the team's playoff status. | [optional]
 **overall_status_str** | Option<**String**> | An HTML formatted string suitable for display to the user containing the team's overall status summary of the event. | [optional]

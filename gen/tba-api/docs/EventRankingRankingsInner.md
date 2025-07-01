@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **qual_average** | Option<**i32**> | The average match score during qualifications. Year specific. May be null if not relevant for a given year. | 
 **extra_stats** | **Vec<f64>** | Additional special data on the team's performance calculated by TBA. | 
 **sort_orders** | Option<**Vec<f64>**> | Additional year-specific information, may be null. See parent `sort_order_info` for details. | 
-**record** | Option<[**models::WltRecord**](WLT_Record.md)> |  | 
+**record** | [**models::WltRecord**](WLT_Record.md) |  | 
 **rank** | **i32** | The team's rank at the event as provided by FIRST. | 
 **dq** | **i32** | Number of times disqualified. | 
 **team_key** | **String** | The team with this rank. | 
