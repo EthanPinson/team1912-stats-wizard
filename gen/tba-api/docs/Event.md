@@ -34,6 +34,7 @@ Name | Type | Description | Notes
 **parent_event_key** | Option<**String**> | The TBA Event key that represents the event's parent. Used to link back to the event from a division event. It is also the inverse relation of `divison_keys`. | 
 **playoff_type** | Option<**i32**> | Playoff Type, as defined here: https://github.com/the-blue-alliance/the-blue-alliance/blob/master/consts/playoff_type.py#L4, or null. | 
 **playoff_type_string** | Option<**String**> | String representation of the `playoff_type`, or null. | 
+**remap_teams** | **std::collections::HashMap<String, String>** | Map of temporary \"off-season demo\" team numbers to pre-rookie and B teams. Both keys and values are team keys in the format 'frc####'. Key is the old team key ('frc' + numeric only), value is the new team key ('frc' + numeric + may include a letter suffix). | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
